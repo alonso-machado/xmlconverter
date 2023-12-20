@@ -1,0 +1,26 @@
+{
+  "financeMoviment": {
+    "moviment": {
+      "operation": {
+        "id": 1254,
+        "operationType": "P",
+        "paymentType": "T",
+        "amountPaid": "154.50",
+        "originalAmount": "1520.00",
+        "dueDate": "2023-05-01",
+        "amountFee": "0.25",
+        "hasSchedules": "Y",
+        "totalSchedules": 10,
+        "paidScheduleNumber": 5,
+        "customer": {
+          "id": 123456,
+          "name": "Maria Silva",
+          "creationDate": "2021-02-10",
+          "birthdayDate": "1991-05-05",
+          "gender": "M",
+          "preferencialPayment": "D"
+        }
+      }
+    }
+  }
+}

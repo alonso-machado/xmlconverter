@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MOVIMENTACAO_FINANCEIRA>
+    <MOVIMENTO>
+        <OPERACAO>
+            <ID>1234</ID>
+            <TIPO_OPERACAO>P</TIPO_OPERACAO>
+            <FORMA_PAGAMENTO>B</FORMA_PAGAMENTO>
+            <VALOR_PAGO>154,50</VALOR_PAGO>
+            <VALOR_ORIGINAL>1520,00</VALOR_ORIGINAL>
+            <DT_VENCIMENTO>01/05/2023</DT_VENCIMENTO>
+            <VALOR_JUROS>0,25</VALOR_JUROS>
+            <POSSUI_PARCELAMENTO>S</POSSUI_PARCELAMENTO>
+            <TOTAL_PARCELAS>10</TOTAL_PARCELAS>
+            <PARCELA_PAGA>5</PARCELA_PAGA>
+            <CLIENTE>
+                <ID>123456</ID>
+                <NOME>Maria Silva</NOME>
+                <DT_CADASTRO>10/02/2021</DT_CADASTRO>
+                <DT_NASCIMENTO>05/05/1991</DT_NASCIMENTO>
+                <SEXO>M</SEXO>
+                <PAGAMENTO_PREFERENCIAL>D</PAGAMENTO_PREFERENCIAL>
+            </CLIENTE>
+        </OPERACAO>
+    </MOVIMENTO>
+</MOVIMENTACAO_FINANCEIRA>

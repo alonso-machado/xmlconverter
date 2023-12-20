@@ -1,0 +1,8 @@
+CONVERT FROM XML TO JSON:
+XML - "TIPO OPERACAO": P = PAGAMENTO | R = REEMBOLSO | L = LIQUIDAR
+
+JSON - "operationType": P = Payment | R = Reimbursement | S = Settle
+
+XML - "FORMA DE PAGAMENTO": B = BOLETO | D = DEBITO EM CONTA | C = CARTAO | P = PIX
+
+JSON - "paymentType": T = Ticket | D = Debit | C = Credit Card | P = PIX
