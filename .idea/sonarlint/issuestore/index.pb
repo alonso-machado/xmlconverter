@@ -62,24 +62,16 @@ Psrc/test/java/com/alonso/xmlconverter/unit/mapper/FinanceMovimentMapperTest.jav
 dsrc/test/java/com/alonso/xmlconverter/integration/service/FinanceMovimentServiceIntegrationTest.java,8\b\8be198b6c401f99914162a898bc61a999e19f932
 y
 Isrc/test/java/com/alonso/xmlconverter/unit/mapper/MovimentMapperTest.java,c\d\cd582a50426add860d552f5793a424d54d4d4e31
->
-lombok2.config,a\8\a867a9eb85b2cfb1a90be148c85353a0509794c6
-<
-logback2.xml,6\f\6f9f37b7399ad9e86edf915040b1ac6ca79d0b4a
 u
 Esrc/main/java/com/alonso/xmlconverter/adapters/BigDecimalAdapter.java,5\b\5bb039e2a9cf841af930dba7c713cbc1b165f5f8
 g
 7src/main/java/com/alonso/xmlconverter/azure/Sender.java,d\d\dd071dff77e0c2bd242daae22437bef756b8782c
-ˆ
-Xsrc/main/java/com/alonso/xmlconverter/azure/EventProcessorBlobCheckpointStoreSample.java,d\2\d27a2427884b1c547d587d85615fe9576371f740
 ‚
 Rsrc/main/java/com/alonso/xmlconverter/azure/EventProcessorBlobCheckpointStore.java,5\5\558f0b6799563b65e1ae2055f5eb93b0135279a8
 =
 lombok.config,8\2\823fe80d2650ec87c2614800da17ca3a55af96a9
 ;
 logback.xml,4\f\4f3024d2366a944a34a4c3cbe4d4b05f30ae9b6e
-7
-HELP.md,1\a\1a273f73b7a477b0745593641bd708a6182c7ad5
 9
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 :
