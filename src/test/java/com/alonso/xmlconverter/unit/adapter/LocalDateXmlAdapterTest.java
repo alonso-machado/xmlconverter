@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
 
-public class LocalDateXmlAdapterTest {
+class LocalDateXmlAdapterTest {
 
     @Test
     void testLocalDateAdapterMarshall() throws Exception {

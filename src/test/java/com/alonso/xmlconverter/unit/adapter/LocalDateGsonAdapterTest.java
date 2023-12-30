@@ -1,7 +1,6 @@
 package com.alonso.xmlconverter.unit.adapter;
 
 import com.alonso.xmlconverter.adapters.LocalDateGsonAdapter;
-import com.alonso.xmlconverter.adapters.LocalDateXmlAdapter;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonPrimitive;
 import com.google.gson.JsonSerializationContext;
@@ -11,10 +10,10 @@ import org.junit.jupiter.api.Test;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-public class LocalDateGsonAdapterTest {
+class LocalDateGsonAdapterTest {
 
     @Test
-    public void testSerialize() {
+    void testSerialize() {
         // Arrange
         LocalDateGsonAdapter adapter = new LocalDateGsonAdapter();
         LocalDate date = LocalDate.parse("2022-01-01");
@@ -32,7 +31,7 @@ public class LocalDateGsonAdapterTest {
     }
 
     @Test
-    public void testDeserialize() {
+    void testDeserialize() {
         // Arrange
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         LocalDate expectedDate = LocalDate.of(2022, 1, 1);

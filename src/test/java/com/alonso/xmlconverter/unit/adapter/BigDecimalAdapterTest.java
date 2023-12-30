@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
 
-public class BigDecimalAdapterTest {
+class BigDecimalAdapterTest {
 
     @Test
     void testBigDecimalAdapterUnmarshall() throws Exception {
@@ -29,5 +29,15 @@ public class BigDecimalAdapterTest {
         String expectedString = "12.34";
         String actualXml = adapter.marshal(input);
         Assertions.assertEquals(expectedString, actualXml);
+    }
+
+    @Test
+    void whenUnmarshallString_Null() throws Exception {
+        BigDecimalAdapter adapter = new BigDecimalAdapter();
+
+        // Test conversion from XML string to BigDecimal
+        String xml = "aaaaaa";
+        BigDecimal actualValue = adapter.unmarshal(xml);
+        Assertions.assertEquals(null, actualValue);
     }
 }

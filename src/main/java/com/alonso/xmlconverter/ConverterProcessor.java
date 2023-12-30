@@ -12,7 +12,6 @@ import com.google.gson.GsonBuilder;
 import lombok.NoArgsConstructor;
 
 import javax.xml.bind.JAXBException;
-import java.io.IOException;
 import java.io.InputStream;
 import java.time.LocalDate;
 
@@ -22,7 +21,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 public class ConverterProcessor {
 
-	public String Convert(InputStream inputStream) {
+	public String convert(InputStream inputStream){
 		Gson gson = new GsonBuilder()
 				.registerTypeAdapter(LocalDate.class, new LocalDateGsonAdapter())
 				.create();
@@ -32,15 +31,10 @@ public class ConverterProcessor {
 		MovimentacaoFinanceira movimentacaoFinanceira = new MovimentacaoFinanceira();
 		try {
 			movimentacaoFinanceira = movimentacaoFinanceiraService.marshalInput(inputStream);
-		} catch (
-				JAXBException e) {
-			throw new RuntimeException(e);
-		} catch (
-				IOException e) {
+		} catch (JAXBException e) {
 			throw new RuntimeException(e);
 		}
 		FinanceMoviment financeMoviment = financeMovimentService.convert(movimentacaoFinanceira);
 		return gson.toJson(financeMoviment);
-
 	}
 }

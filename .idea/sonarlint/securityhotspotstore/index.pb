@@ -93,3 +93,11 @@ Psrc/test/java/com/alonso/xmlconverter/unit/adapter/LocalDateGsonAdapterTest.jav
 Ssrc/test/java/com/alonso/xmlconverter/integration/LambdaHandlerIntegrationTest.java,d\2\d2f8413d24e69af61026c8aa199820f56906af8e
 }
 Msrc/test/java/com/alonso/xmlconverter/integration/ConverterProcessorTest.java,5\5\55c9d5d2a15a12a8318874cc1fa629e9dc6d597a
+w
+Gsrc/test/java/com/alonso/xmlconverter/XmlconverterApplicationTests.java,7\7\77052fe8e844e4e7bad839f23b6d13c2fa174c84
+s
+Csrc/main/java/com/alonso/xmlconverter/controller/awscontroller.java,5\2\522137099400a1e177efec43df65c6dfcf66965b
+y
+Isrc/main/java/com/alonso/xmlconverter/controller/AwsLambdaController.java,5\f\5fa240157e36b8e66401bdb0f58eee242df3171a
+}
+Msrc/main/java/com/alonso/xmlconverter/aws/controller/AwsLambdaController.java,2\7\2753f277742d50319fa296cfc1fafa53ddfb752d

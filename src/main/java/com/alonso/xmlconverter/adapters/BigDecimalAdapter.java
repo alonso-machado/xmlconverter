@@ -11,9 +11,7 @@ public class BigDecimalAdapter extends XmlAdapter<String, BigDecimal> {
 			String withoutCommas = input.replace(',', '.');
 			Double value = Double.parseDouble(withoutCommas);
 			return BigDecimal.valueOf(value);
-		} catch (NumberFormatException e) {
-			return null;
-		} catch (NullPointerException e) {
+		} catch (NumberFormatException | NullPointerException e) {
 			return null;
 		}
 	}

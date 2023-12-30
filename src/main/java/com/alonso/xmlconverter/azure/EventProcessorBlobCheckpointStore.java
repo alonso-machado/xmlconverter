@@ -42,7 +42,7 @@ public class EventProcessorBlobCheckpointStore {
         byte[] data = eventData.getBody();
         InputStream targetStream = new ByteArrayInputStream(data);
         ConverterProcessor converterProcessor = new ConverterProcessor();
-        String response = converterProcessor.Convert(targetStream);
+        String response = converterProcessor.convert(targetStream);
 
         EventData eventDataConverted = new EventData(response);
         Sender.publishEvents(eventDataConverted);
