@@ -1,4 +1,4 @@
-package com.alonso.xmlconverter.integration.service;
+package com.alonso.xmlconverter.integration;
 
 import com.alonso.xmlconverter.ConverterProcessor;
 import org.junit.jupiter.api.Assertions;

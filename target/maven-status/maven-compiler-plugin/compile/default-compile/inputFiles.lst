@@ -1,6 +1,5 @@
 C:\Users\Alonso\Documents\Projects\xmlconverter\src\main\java\com\alonso\xmlconverter\model\input\Movimento.java
 C:\Users\Alonso\Documents\Projects\xmlconverter\src\main\java\com\alonso\xmlconverter\mapper\FinanceMovimentMapper.java
-C:\Users\Alonso\Documents\Projects\xmlconverter\src\main\java\com\alonso\xmlconverter\adapters\LocalDateAdapter.java
 C:\Users\Alonso\Documents\Projects\xmlconverter\src\main\java\com\alonso\xmlconverter\model\input\MovimentacaoFinanceira.java
 C:\Users\Alonso\Documents\Projects\xmlconverter\src\main\java\com\alonso\xmlconverter\model\output\Customer.java
 C:\Users\Alonso\Documents\Projects\xmlconverter\src\main\java\com\alonso\xmlconverter\service\FinanceMovimentService.java
@@ -11,8 +10,10 @@ C:\Users\Alonso\Documents\Projects\xmlconverter\src\main\java\com\alonso\xmlconv
 C:\Users\Alonso\Documents\Projects\xmlconverter\src\main\java\com\alonso\xmlconverter\model\input\Cliente.java
 C:\Users\Alonso\Documents\Projects\xmlconverter\src\main\java\com\alonso\xmlconverter\model\input\PossuiParcelamentosEnum.java
 C:\Users\Alonso\Documents\Projects\xmlconverter\src\main\java\com\alonso\xmlconverter\model\input\TipoOperacaoEnum.java
+C:\Users\Alonso\Documents\Projects\xmlconverter\src\main\java\com\alonso\xmlconverter\adapters\LocalDateGsonAdapter.java
 C:\Users\Alonso\Documents\Projects\xmlconverter\src\main\java\com\alonso\xmlconverter\adapters\BigDecimalAdapter.java
 C:\Users\Alonso\Documents\Projects\xmlconverter\src\main\java\com\alonso\xmlconverter\model\output\HasScheduleEnum.java
+C:\Users\Alonso\Documents\Projects\xmlconverter\src\main\java\com\alonso\xmlconverter\aws\LambdaHandler.java
 C:\Users\Alonso\Documents\Projects\xmlconverter\src\main\java\com\alonso\xmlconverter\model\output\OperationTypeEnum.java
 C:\Users\Alonso\Documents\Projects\xmlconverter\src\main\java\com\alonso\xmlconverter\mapper\OperationMapper.java
 C:\Users\Alonso\Documents\Projects\xmlconverter\src\main\java\com\alonso\xmlconverter\model\output\FinanceMoviment.java
@@ -20,6 +21,8 @@ C:\Users\Alonso\Documents\Projects\xmlconverter\src\main\java\com\alonso\xmlconv
 C:\Users\Alonso\Documents\Projects\xmlconverter\src\main\java\com\alonso\xmlconverter\model\GenderEnum.java
 C:\Users\Alonso\Documents\Projects\xmlconverter\src\main\java\com\alonso\xmlconverter\model\input\PagamentoEnum.java
 C:\Users\Alonso\Documents\Projects\xmlconverter\src\main\java\com\alonso\xmlconverter\azure\Sender.java
+C:\Users\Alonso\Documents\Projects\xmlconverter\src\main\java\com\alonso\xmlconverter\adapters\LocalDateXmlAdapter.java
+C:\Users\Alonso\Documents\Projects\xmlconverter\src\main\java\com\alonso\xmlconverter\ConverterProcessor.java
 C:\Users\Alonso\Documents\Projects\xmlconverter\src\main\java\com\alonso\xmlconverter\model\output\Moviment.java
 C:\Users\Alonso\Documents\Projects\xmlconverter\src\main\java\com\alonso\xmlconverter\model\input\Operacao.java
 C:\Users\Alonso\Documents\Projects\xmlconverter\src\main\java\com\alonso\xmlconverter\mapper\MovimentMapper.java

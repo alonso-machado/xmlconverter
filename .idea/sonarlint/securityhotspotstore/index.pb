@@ -89,3 +89,7 @@ x
 Hsrc/main/java/com/alonso/xmlconverter/adapters/LocalDateGsonAdapter.java,2\c\2c8c899db247ec5d1889fbef22fa4be3605828da
 €
 Psrc/test/java/com/alonso/xmlconverter/unit/adapter/LocalDateGsonAdapterTest.java,c\1\c18fba8cdb8aa89436ab9ed363f3fba2ad304a57
+ƒ
+Ssrc/test/java/com/alonso/xmlconverter/integration/LambdaHandlerIntegrationTest.java,d\2\d2f8413d24e69af61026c8aa199820f56906af8e
+}
+Msrc/test/java/com/alonso/xmlconverter/integration/ConverterProcessorTest.java,5\5\55c9d5d2a15a12a8318874cc1fa629e9dc6d597a

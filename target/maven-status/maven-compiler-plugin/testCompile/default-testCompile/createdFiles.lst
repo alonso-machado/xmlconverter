@@ -1,10 +1,13 @@
 com\alonso\xmlconverter\unit\adapter\BigDecimalAdapterTest.class
 com\alonso\xmlconverter\integration\service\FinanceMovimentServiceIntegrationTest.class
-com\alonso\xmlconverter\unit\adapter\LocalDateAdapterTest.class
 com\alonso\xmlconverter\unit\mapper\FinanceMovimentMapperTest.class
 com\alonso\xmlconverter\unit\mapper\OperationMapperTest.class
 com\alonso\xmlconverter\unit\service\MovimentacaoFinanceiraServiceTest.class
 com\alonso\xmlconverter\unit\mapper\CustomerMapperTest.class
 com\alonso\xmlconverter\XmlconverterApplicationTests.class
+com\alonso\xmlconverter\unit\adapter\LocalDateXmlAdapterTest.class
+com\alonso\xmlconverter\integration\ConverterProcessorTest.class
 com\alonso\xmlconverter\unit\mapper\MovimentMapperTest.class
 com\alonso\xmlconverter\unit\service\FinanceMovimentServiceTest.class
+com\alonso\xmlconverter\integration\LambdaHandlerIntegrationTest.class
+com\alonso\xmlconverter\unit\adapter\LocalDateGsonAdapterTest.class
