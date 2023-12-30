@@ -4,7 +4,7 @@ import javax.xml.bind.annotation.adapters.XmlAdapter;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-public class LocalDateAdapter extends XmlAdapter<String, LocalDate> {
+public class LocalDateXmlAdapter extends XmlAdapter<String, LocalDate> {
 
 	DateTimeFormatter latinAmericaPattern = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 

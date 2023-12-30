@@ -4,12 +4,7 @@
 //https://github.com/Azure/azure-sdk-for-java/blob/main/sdk/eventhubs/azure-messaging-eventhubs-checkpointstore-blob/src/samples/java/com/azure/messaging/eventhubs/checkpointstore/blob/EventProcessorBlobCheckpointStoreSample.java
 package com.alonso.xmlconverter.azure;
 
-import com.alonso.xmlconverter.mapper.FinanceMovimentMapper;
-import com.alonso.xmlconverter.mapper.FinanceMovimentMapperImpl;
-import com.alonso.xmlconverter.model.input.MovimentacaoFinanceira;
-import com.alonso.xmlconverter.model.output.FinanceMoviment;
-import com.alonso.xmlconverter.service.FinanceMovimentService;
-import com.alonso.xmlconverter.service.MovimentacaoFinanceiraService;
+import com.alonso.xmlconverter.ConverterProcessor;
 import com.azure.core.http.policy.HttpLogDetailLevel;
 import com.azure.core.http.policy.HttpLogOptions;
 import com.azure.messaging.eventhubs.EventData;
@@ -21,43 +16,36 @@ import com.azure.messaging.eventhubs.models.EventContext;
 import com.azure.messaging.eventhubs.models.PartitionContext;
 import com.azure.storage.blob.BlobContainerAsyncClient;
 import com.azure.storage.blob.BlobContainerClientBuilder;
-import com.google.gson.Gson;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
-import javax.xml.bind.JAXBException;
-import java.io.IOException;
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Consumer;
 
-
 public class EventProcessorBlobCheckpointStore {
 
-    private static final String EH_CONNECTION_STRING = "Endpoint=sb://eh-dev-gft-il-poc67.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=uZIMz5Dl9gqR0w4jHFUOiUrkUNGCoDien+AEhNU1CSM=";
-    private static final String EH_NAME = "eh-dev-gft-il-poc67";
-    private static final String SAS_TOKEN_STRING = "?sv=2022-11-02&ss=bfqt&srt=sc&sp=rwdlacupiytfx&se=2023-12-31T00:57:14Z&st=2023-12-20T16:57:14Z&spr=https,http&sig=eWM9pwU5KbP0p1g4yQ7i%2B1cB%2FKLbdDhDCZWqTw5TGyY%3D";
-    private static final String STORAGE_CONNECTION_STRING = "DefaultEndpointsProtocol=https;AccountName=sadevgftilpoc67;AccountKey=uBGnDAl0zQD+tLtwEjuTxV174RAgeDawUhnsx9lQ2858Xx6hWOslIOyLanKmzwYJwsXJHclj3iFN+AStt59Dvg==;EndpointSuffix=core.windows.net";
+    private static final String EH_CONNECTION_STRING = "Endpoint=sb://eh-dev-poc67.servicebus.windows.net/;";
+    private static final String EH_NAME = "eh-dev-poc67";
+    private static final String SAS_TOKEN_STRING = "SAS_TOKEN";
+    private static final String STORAGE_CONNECTION_STRING = "DefaultEndpointsProtocol=https;AccountName=sadevpoc67;";
 
-    private static final org.apache.logging.log4j.Logger log = org.apache.logging.log4j.LogManager.getLogger(EventProcessorBlobCheckpointStore.class);
+    private static final Logger log = LogManager.getLogger(EventProcessorBlobCheckpointStore.class);
+
+
 
     public static final Consumer<EventContext> PARTITION_PROCESSOR = eventContext -> {
         log.info("Processing event %s", eventContext.getEventData());
         PartitionContext partitionContext = eventContext.getPartitionContext();
         EventData eventData = eventContext.getEventData();
         byte[] data = eventData.getBody();
-        Gson gson = new Gson();
-        MovimentacaoFinanceiraService service = new MovimentacaoFinanceiraService();
-        FinanceMovimentMapper financeMovimentMapper = new FinanceMovimentMapperImpl();
-        FinanceMovimentService financeMovimentService = new FinanceMovimentService(financeMovimentMapper);
-        MovimentacaoFinanceira movimentacaoFinanceira = new MovimentacaoFinanceira();
-        try {
-            movimentacaoFinanceira = service.marshalInput(data);
-        } catch (JAXBException e) {
-            throw new RuntimeException(e);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        FinanceMoviment financeMoviment = financeMovimentService.convert(movimentacaoFinanceira);
-        EventData eventData2 = new EventData(gson.toJson(financeMoviment));
-        Sender.publishEvents(eventData2);
+        InputStream targetStream = new ByteArrayInputStream(data);
+        ConverterProcessor converterProcessor = new ConverterProcessor();
+        String response = converterProcessor.Convert(targetStream);
+
+        EventData eventDataConverted = new EventData(response);
+        Sender.publishEvents(eventDataConverted);
     };
 
     public static final Consumer<ErrorContext> ERROR_HANDLER = errorContext ->

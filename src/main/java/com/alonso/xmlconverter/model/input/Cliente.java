@@ -1,6 +1,6 @@
 package com.alonso.xmlconverter.model.input;
 
-import com.alonso.xmlconverter.adapters.LocalDateAdapter;
+import com.alonso.xmlconverter.adapters.LocalDateXmlAdapter;
 import com.alonso.xmlconverter.model.GenderEnum;
 import lombok.*;
 
@@ -23,10 +23,10 @@ public class Cliente implements Serializable {
 	@XmlElement(name = "NOME")
 	private String nome;
 	@XmlElement(name = "DT_CADASTRO")
-	@XmlJavaTypeAdapter(LocalDateAdapter.class)
+	@XmlJavaTypeAdapter(LocalDateXmlAdapter.class)
 	private LocalDate dataCadastro;
 	@XmlElement(name = "DT_NASCIMENTO")
-	@XmlJavaTypeAdapter(LocalDateAdapter.class)
+	@XmlJavaTypeAdapter(LocalDateXmlAdapter.class)
 	private LocalDate dataNascimento;
 	@XmlElement(name = "SEXO")
 	private GenderEnum sexo;

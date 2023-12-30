@@ -15,9 +15,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -37,11 +36,14 @@ class MovimentacaoFinanceiraServiceTest {
 		LocalDate testDate = LocalDate.parse("2023-05-01");
 
 		// Act
-		movimentacaoFinanceira = movimentacaoFinanceiraService.marshalFile("src/test/resources/inputExample.xml");
+		File xmlFile = new File("src/test/resources/inputExample.xml");
+		InputStream inputStream = new FileInputStream(xmlFile);
+		movimentacaoFinanceira = movimentacaoFinanceiraService.marshalInput(inputStream);
 
 		// Assert
 		Assertions.assertEquals(1234, movimentacaoFinanceira.getMovimento().getOperacao().getId());
 		Assertions.assertEquals(testDate, movimentacaoFinanceira.getMovimento().getOperacao().getDtVencimento());
 		Assertions.assertEquals(10, movimentacaoFinanceira.getMovimento().getOperacao().getTotalParcelas());
+		Assertions.assertEquals(BigDecimal.valueOf(1520.00), movimentacaoFinanceira.getMovimento().getOperacao().getValorOriginal());
 	}
 }

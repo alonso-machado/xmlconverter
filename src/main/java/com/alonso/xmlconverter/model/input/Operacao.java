@@ -1,7 +1,7 @@
 package com.alonso.xmlconverter.model.input;
 
 import com.alonso.xmlconverter.adapters.BigDecimalAdapter;
-import com.alonso.xmlconverter.adapters.LocalDateAdapter;
+import com.alonso.xmlconverter.adapters.LocalDateXmlAdapter;
 import lombok.*;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -32,7 +32,7 @@ public class Operacao {
 	@XmlJavaTypeAdapter(BigDecimalAdapter.class)
 	private BigDecimal valorOriginal;
 	@XmlElement(name = "DT_VENCIMENTO")
-	@XmlJavaTypeAdapter(LocalDateAdapter.class)
+	@XmlJavaTypeAdapter(LocalDateXmlAdapter.class)
 	private LocalDate dtVencimento;
 	@XmlElement(name = "VALOR_JUROS")
 	@XmlJavaTypeAdapter(BigDecimalAdapter.class)

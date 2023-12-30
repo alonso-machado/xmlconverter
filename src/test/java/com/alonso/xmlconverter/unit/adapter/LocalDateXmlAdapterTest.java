@@ -1,16 +1,16 @@
 package com.alonso.xmlconverter.unit.adapter;
 
-import com.alonso.xmlconverter.adapters.LocalDateAdapter;
+import com.alonso.xmlconverter.adapters.LocalDateXmlAdapter;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
 
-public class LocalDateAdapterTest {
+public class LocalDateXmlAdapterTest {
 
     @Test
     void testLocalDateAdapterMarshall() throws Exception {
-        LocalDateAdapter adapter = new LocalDateAdapter();
+        LocalDateXmlAdapter adapter = new LocalDateXmlAdapter();
 
         // Test conversion from LocalDate to XML string
         LocalDate input = LocalDate.parse("2023-11-12");
@@ -23,7 +23,7 @@ public class LocalDateAdapterTest {
     @Test
     void testLocalDateAdapterUnmarshal() throws Exception {
 
-        LocalDateAdapter adapter = new LocalDateAdapter();
+        LocalDateXmlAdapter adapter = new LocalDateXmlAdapter();
         // Test conversion from XML string to LocalDate
         String xml = "01/01/2020";
         LocalDate expectedValue = LocalDate.parse("2020-01-01");

@@ -22,6 +22,7 @@
 		<version.mapstruct-lombok-binding>0.2.0</version.mapstruct-lombok-binding>
 		<version.logback>1.4.14</version.logback>
 		<version.jacoco>0.8.11</version.jacoco>
+		<awspowertools.version>1.17.0</awspowertools.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -66,23 +67,6 @@
 			<artifactId>gson</artifactId>
 			<version>2.10</version>
 		</dependency>
-		<!--
-		<dependency>
-			<groupId>ch.qos.logback</groupId>
-			<artifactId>logback-classic</artifactId>
-			<version>${version.logback}</version>
-		</dependency>
-		<dependency>
-			<groupId>ch.qos.logback</groupId>
-			<artifactId>logback-core</artifactId>
-			<version>${version.logback}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-			<version>2.0.9</version>
-		</dependency>
-		-->
 		<dependency>
 			<groupId>org.jacoco</groupId>
 			<artifactId>jacoco-maven-plugin</artifactId>
@@ -99,11 +83,31 @@
 			<artifactId>azure-messaging-eventhubs-checkpointstore-blob</artifactId>
 			<version>1.16.1</version>
 		</dependency>
+		<dependency>
+			<groupId>com.amazonaws.serverless</groupId>
+			<artifactId>aws-serverless-java-container-springboot2</artifactId>
+			<version>1.9.3</version>
+		</dependency>
+		<dependency>
+			<groupId>software.amazon.lambda</groupId>
+			<artifactId>powertools-tracing</artifactId>
+			<version>${awspowertools.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>software.amazon.lambda</groupId>
+			<artifactId>powertools-logging</artifactId>
+			<version>${awspowertools.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>software.amazon.lambda</groupId>
+			<artifactId>powertools-metrics</artifactId>
+			<version>${awspowertools.version}</version>
+		</dependency>
 
 	</dependencies>
 
 	<build>
-		<finalName>il-gft-poc-app</finalName>
+		<finalName>serverless-xml-poc-app</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -144,7 +148,7 @@
 										<limit>
 											<counter>LINE</counter>
 											<value>COVEREDRATIO</value>
-											<minimum>0.1</minimum>
+											<minimum>0.3</minimum>
 										</limit>
 									</limits>
 								</rule>
@@ -178,9 +182,7 @@
 						</path>
 					</annotationProcessorPaths>
 					<compilerArgs>
-						<compilerArg>
-							-Amapstruct.defaultComponentModel=spring
-						</compilerArg>
+						<compilerArg>-Amapstruct.defaultComponentModel=spring</compilerArg>
 					</compilerArgs>
 				</configuration>
 			</plugin>
@@ -188,6 +190,29 @@
 				<groupId>org.sonarsource.scanner.maven</groupId>
 				<artifactId>sonar-maven-plugin</artifactId>
 				<version>3.10.0.2594</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-shade-plugin</artifactId>
+				<version>3.2.4</version>
+				<configuration>
+					<createDependencyReducedPom>false</createDependencyReducedPom>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>shade</goal>
+						</goals>
+						<configuration>
+							<artifactSet>
+								<excludes>
+									<exclude>org.apache.tomcat.embed:*</exclude>
+								</excludes>
+							</artifactSet>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>

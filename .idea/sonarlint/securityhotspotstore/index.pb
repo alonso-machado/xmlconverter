@@ -48,8 +48,6 @@ t
 Dsrc/main/java/com/alonso/xmlconverter/model/input/PagamentoEnum.java,4\3\4397f32f8b819c33788da9755680ee5c58075cdf
 €
 Psrc/main/java/com/alonso/xmlconverter/service/MovimentacaoFinanceiraService.java,9\4\9468ae290532079ecea8ca50eb38e64632e44d29
-t
-Dsrc/main/java/com/alonso/xmlconverter/adapters/LocalDateAdapter.java,e\f\efbef646da5ff6ab5ba6a85c8b0fb69367e266c3
 ‚
 Rsrc/test/java/com/alonso/xmlconverter/unit/service/FinanceMovimentServiceTest.java,2\d\2db6ee624f56c28a5e40b5d64cb0c17fba804170
 y
@@ -70,8 +68,6 @@ g
 Rsrc/main/java/com/alonso/xmlconverter/azure/EventProcessorBlobCheckpointStore.java,5\5\558f0b6799563b65e1ae2055f5eb93b0135279a8
 =
 lombok.config,8\2\823fe80d2650ec87c2614800da17ca3a55af96a9
-;
-logback.xml,4\f\4f3024d2366a944a34a4c3cbe4d4b05f30ae9b6e
 9
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 :
@@ -81,5 +77,15 @@ dictionary,f\1\f18bfb74e613afb11f36bdd80cf05cd5dfad98d6
 Ysrc/test/java/com/alonso/xmlconverter/unit/service/MovimentacaoFinanceiraServiceTest.java,c\d\cda160345773b6b14da32e9d5731c882435b79fe
 }
 Msrc/test/java/com/alonso/xmlconverter/unit/adapter/BigDecimalAdapterTest.java,e\b\eb82943dde54c2a0e5a62bea652beaf80af4b74c
-|
-Lsrc/test/java/com/alonso/xmlconverter/unit/adapter/LocalDateAdapterTest.java,8\5\85d731a61bcd7dfb877e0a7917f959ca37f1580e
+l
+<src/main/java/com/alonso/xmlconverter/aws/LambdaHandler.java,9\2\92c8b07ab9146aaf3f5c202f6b42bda496e83483
+m
+=src/main/java/com/alonso/xmlconverter/ConverterProcessor.java,f\1\f1acf4b6f408be21ec86a85cae55e52c40a3345b
+w
+Gsrc/main/java/com/alonso/xmlconverter/adapters/LocalDateXmlAdapter.java,0\1\01cd027f2819aeab94998f136a5c871e067fc25c
+
+Osrc/test/java/com/alonso/xmlconverter/unit/adapter/LocalDateXmlAdapterTest.java,1\9\1933a32cd0d03ef5a16b22c7451352bf917a1f84
+x
+Hsrc/main/java/com/alonso/xmlconverter/adapters/LocalDateGsonAdapter.java,2\c\2c8c899db247ec5d1889fbef22fa4be3605828da
+€
+Psrc/test/java/com/alonso/xmlconverter/unit/adapter/LocalDateGsonAdapterTest.java,c\1\c18fba8cdb8aa89436ab9ed363f3fba2ad304a57
