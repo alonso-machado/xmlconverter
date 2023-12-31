@@ -202,7 +202,8 @@
 				<artifactId>maven-shade-plugin</artifactId>
 				<version>3.2.4</version>
 				<configuration>
-					<createDependencyReducedPom>false</createDependencyReducedPom>
+					<createDependencyReducedPom>true</createDependencyReducedPom>
+					<minimizeJar>true</minimizeJar>
 				</configuration>
 				<executions>
 					<execution>
@@ -220,7 +221,6 @@
 								</excludes>
 							</artifactSet>
 							<minimizeJar>true</minimizeJar>
-							<createDependencyReducedPom>true</createDependencyReducedPom>
 							<shadedArtifactAttached>true</shadedArtifactAttached>
 							<shadedClassifierName>aws</shadedClassifierName>
 						</configuration>
