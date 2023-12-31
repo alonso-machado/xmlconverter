@@ -23,6 +23,7 @@
 		<version.logback>1.4.14</version.logback>
 		<version.jacoco>0.8.11</version.jacoco>
 		<awspowertools.version>1.17.0</awspowertools.version>
+		<version.springboot>2.7.18</version.springboot>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -33,6 +34,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+			<version>${version.springboot}</version>
 		</dependency>
 		<dependency>
 			<groupId>jakarta.xml.bind</groupId>
@@ -208,10 +214,13 @@
 							<artifactSet>
 								<excludes>
 									<exclude>org.apache.tomcat.embed:*</exclude>
+									<exclude>junit:junit</exclude>
+									<exclude>org.junit:*</exclude>
+									<exclude>org.mapstruct:*</exclude>
 								</excludes>
 							</artifactSet>
 							<minimizeJar>true</minimizeJar>
-							<createDependencyReducedPom>false</createDependencyReducedPom>
+							<createDependencyReducedPom>true</createDependencyReducedPom>
 							<shadedArtifactAttached>true</shadedArtifactAttached>
 							<shadedClassifierName>aws</shadedClassifierName>
 						</configuration>

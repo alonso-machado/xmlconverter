@@ -5,6 +5,7 @@ import com.amazonaws.serverless.proxy.model.AwsProxyRequest;
 import com.amazonaws.serverless.proxy.model.AwsProxyResponse;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.io.File;
@@ -13,16 +14,14 @@ import java.nio.file.Files;
 @SpringBootTest
 class LambdaHandlerIntegrationTest {
 
-	/*
+	@Autowired
+	LambdaHandler lambdaHandler;
 	@Test
 	void testHandleRequest() throws Exception {
 		// Arrange
-		LambdaHandler lambdaHandler = new LambdaHandler();
 		File xmlFile = new File("src/test/resources/inputExample.xml");
 		AwsProxyRequest awsProxyRequest = new AwsProxyRequest();
 		awsProxyRequest.setBody(new String(Files.readAllBytes(xmlFile.toPath())));
-		File jsonFile = new File("src/test/resources/outputExample.xml");
-		String expectedResponse = new String(Files.readAllBytes(jsonFile.toPath()));
 
 		// Act
 		AwsProxyResponse awsProxyResponse = lambdaHandler.handleRequest(awsProxyRequest, null);
@@ -32,9 +31,14 @@ class LambdaHandlerIntegrationTest {
 		Assertions.assertNotNull(awsProxyResponse);
 		Assertions.assertEquals(200, awsProxyResponse.getStatusCode());
 		Assertions.assertNotNull(response);
-		Assertions.assertTrue(response.contains("\"id\": 1254"));
-		Assertions.assertTrue(response.contains("\"originalAmount\": \"1520.00\""));
-		Assertions.assertTrue(response.contains("\"paidScheduleNumber\": 5"));
+		// These partial tests would be more meaningful but contains is not working as expected
+		//Assertions.assertTrue(response.contains("\"id\": 1234"));
+		//Assertions.assertTrue(response.contains("\"originalAmount\": \"1520.00\""));
+		//Assertions.assertTrue(response.contains("\"paidScheduleNumber\": 5"));
+		Assertions.assertEquals("{\"moviment\":{\"operation\":{\"id\":1234,\"operationType\":\"P\",\"paymentType\":\"T\",\"amountPaid\":154.5,\"originalAmount\":1520.0," +
+				"\"dueDate\":\"2023-05-01\",\"amountFee\":0.25,\"hasSchedules\":\"Y\",\"totalSchedules\":10,\"paidScheduleNumber\":5,\"customer\":{\"id\":123456,\"name\":\"Maria Silva\"," +
+				"\"creationDate\":\"2021-02-10\",\"birthdayDate\":\"1991-05-05\",\"gender\":\"M\",\"preferentialPayment\":\"D\"}}}}", response);
+
 	}
-	*/
+
 }
