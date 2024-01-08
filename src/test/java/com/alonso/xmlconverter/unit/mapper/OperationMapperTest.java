@@ -103,4 +103,69 @@ class OperationMapperTest {
 		Assertions.assertEquals(cli.getDataNascimento(), operation.getCustomer().getBirthdayDate());
 		Assertions.assertEquals(cli.getDataCadastro(), operation.getCustomer().getCreationDate());
 	}
+
+	@Test
+	void whenMapFromXML_WithNULLs_WithCLIENTE_thenGetExpectedResult() {
+		// Arrange
+		Double random = Math.abs(Math.random() * 21);
+		LocalDate testDate = LocalDate.of(2023, 12, 18);
+		BigDecimal valor = BigDecimal.valueOf(random).setScale(2, BigDecimal.ROUND_HALF_UP);
+		Cliente cli = Cliente.builder().dataCadastro(null).nome(null).sexo(GenderEnum.M).pagamentoPreferencial(PagamentoEnum.C).dataNascimento(testDate.minusYears(25)).build();
+		Operacao op = Operacao.builder().id(random.intValue()).tipoOperacao(TipoOperacaoEnum.L).formaPagamento(PagamentoEnum.B)
+				.dtVencimento(testDate)	.totalParcelas(5).parcelaPaga(null).possuiParcelamento(PossuiParcelamentosEnum.S)
+				.cliente(cli).valorPago(valor).valorOriginal(null).valorJuros(valor).build();
+
+		// Act - Call the method being tested
+		Operation operation = operationMapper.toOperation(op);
+
+		// Assert - Perform assertions to check the result
+		Assertions.assertNotNull(operation);
+		Assertions.assertEquals(random.intValue(), operation.getId());
+		Assertions.assertEquals(testDate, operation.getDueDate());
+		Assertions.assertEquals(valor, operation.getAmountPaid());
+		Assertions.assertEquals(null, operation.getOriginalAmount());
+		Assertions.assertEquals(OperationTypeEnum.S, operation.getOperationType());
+		Assertions.assertEquals(PaymentTypeEnum.T, operation.getPaymentType());
+
+		// Assert the Customer inside Operation
+		Assertions.assertNotNull(operation.getCustomer());
+		Assertions.assertEquals(cli.getId(), operation.getCustomer().getId());
+		Assertions.assertEquals(cli.getNome(), operation.getCustomer().getName());
+		Assertions.assertEquals(cli.getSexo(), operation.getCustomer().getGender());
+		Assertions.assertEquals(cli.getDataNascimento(), operation.getCustomer().getBirthdayDate());
+		Assertions.assertEquals(cli.getDataCadastro(), operation.getCustomer().getCreationDate());
+	}
+
+	@Test
+	void whenMapFromXML_WithMissingData_WithCLIENTE_thenGetExpectedResult() {
+		// Arrange
+		Double random = Math.abs(Math.random() * 21);
+		LocalDate testDate = LocalDate.of(2023, 12, 18);
+		BigDecimal valor = BigDecimal.valueOf(random).setScale(2, BigDecimal.ROUND_HALF_UP);
+		Cliente cli = Cliente.builder().sexo(GenderEnum.M).pagamentoPreferencial(PagamentoEnum.C).dataNascimento(testDate.minusYears(25)).build();
+		Operacao op = Operacao.builder().id(random.intValue()).tipoOperacao(TipoOperacaoEnum.L).formaPagamento(PagamentoEnum.B)
+				.dtVencimento(testDate)	.possuiParcelamento(PossuiParcelamentosEnum.S)
+				.cliente(cli).valorPago(valor).build();
+
+		// Act - Call the method being tested
+		Operation operation = operationMapper.toOperation(op);
+
+		// Assert - Perform assertions to check the result
+		Assertions.assertNotNull(operation);
+		Assertions.assertEquals(random.intValue(), operation.getId());
+		Assertions.assertEquals(testDate, operation.getDueDate());
+		Assertions.assertEquals(valor, operation.getAmountPaid());
+		Assertions.assertEquals(null, operation.getOriginalAmount());
+		Assertions.assertEquals(null, operation.getAmountFee());
+		Assertions.assertEquals(OperationTypeEnum.S, operation.getOperationType());
+		Assertions.assertEquals(PaymentTypeEnum.T, operation.getPaymentType());
+
+		// Assert the Customer inside Operation
+		Assertions.assertNotNull(operation.getCustomer());
+		Assertions.assertEquals(cli.getId(), operation.getCustomer().getId());
+		Assertions.assertEquals(cli.getNome(), operation.getCustomer().getName());
+		Assertions.assertEquals(cli.getSexo(), operation.getCustomer().getGender());
+		Assertions.assertEquals(cli.getDataNascimento(), operation.getCustomer().getBirthdayDate());
+		Assertions.assertEquals(cli.getDataCadastro(), operation.getCustomer().getCreationDate());
+	}
 }

@@ -43,8 +43,10 @@ public abstract class OperationMapper {
 	@Mapping(target = "amountFee", source = "operacao.valorJuros")
 	@Mapping(target = "totalSchedules", source = "operacao.totalParcelas")
 	@Mapping(target = "paidScheduleNumber", source = "operacao.parcelaPaga")
-	@BeanMapping(builder = @Builder(disableBuilder = true))
+	@BeanMapping(builder = @Builder(disableBuilder = true),	nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS)
 	public abstract Operation toOperation(Operacao operacao);
+
+	//NullValuePropertyMappingStrategy.IGNORE to ignore null values
 
 	/*
 

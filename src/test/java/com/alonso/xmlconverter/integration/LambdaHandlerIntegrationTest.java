@@ -17,7 +17,7 @@ class LambdaHandlerIntegrationTest {
 	@Autowired
 	LambdaHandler lambdaHandler;
 	@Test
-	void testHandleRequest() throws Exception {
+	void whenHandleRequest_thenReturnResponseJson() throws Exception {
 		// Arrange
 		File xmlFile = new File("src/test/resources/inputExample.xml");
 		AwsProxyRequest awsProxyRequest = new AwsProxyRequest();
@@ -31,10 +31,6 @@ class LambdaHandlerIntegrationTest {
 		Assertions.assertNotNull(awsProxyResponse);
 		Assertions.assertEquals(200, awsProxyResponse.getStatusCode());
 		Assertions.assertNotNull(response);
-		// These partial tests would be more meaningful but contains is not working as expected
-		//Assertions.assertTrue(response.contains("\"id\": 1234"));
-		//Assertions.assertTrue(response.contains("\"originalAmount\": \"1520.00\""));
-		//Assertions.assertTrue(response.contains("\"paidScheduleNumber\": 5"));
 		Assertions.assertEquals("{\"moviment\":{\"operation\":{\"id\":1234,\"operationType\":\"P\",\"paymentType\":\"T\",\"amountPaid\":154.5,\"originalAmount\":1520.0," +
 				"\"dueDate\":\"2023-05-01\",\"amountFee\":0.25,\"hasSchedules\":\"Y\",\"totalSchedules\":10,\"paidScheduleNumber\":5,\"customer\":{\"id\":123456,\"name\":\"Maria Silva\"," +
 				"\"creationDate\":\"2021-02-10\",\"birthdayDate\":\"1991-05-05\",\"gender\":\"M\",\"preferentialPayment\":\"D\"}}}}", response);

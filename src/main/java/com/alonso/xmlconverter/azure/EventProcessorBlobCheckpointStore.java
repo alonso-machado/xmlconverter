@@ -33,8 +33,6 @@ public class EventProcessorBlobCheckpointStore {
 
     private static final Logger log = LogManager.getLogger(EventProcessorBlobCheckpointStore.class);
 
-
-
     public static final Consumer<EventContext> PARTITION_PROCESSOR = eventContext -> {
         log.info("Processing event %s", eventContext.getEventData());
         PartitionContext partitionContext = eventContext.getPartitionContext();
