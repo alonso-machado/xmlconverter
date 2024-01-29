@@ -13,7 +13,7 @@ public class FinanceMovimentService {
 
 	private final FinanceMovimentMapper financeMovimentMapper;
 
-	public FinanceMoviment convert(MovimentacaoFinanceira xmlEntity) {
+	public FinanceMoviment convert(MovimentacaoFinanceira xmlEntity) throws NullPointerException {
 		return financeMovimentMapper.toFinanceMoviment(xmlEntity);
 	}
 

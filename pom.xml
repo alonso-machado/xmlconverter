@@ -10,20 +10,25 @@
 	</parent>
 	<groupId>com.alonso</groupId>
 	<artifactId>xmlconverter</artifactId>
-	<version>1.0.1-SNAPSHOT</version>
+	<version>1.2.0-SNAPSHOT</version>
 	<name>xmlconverter</name>
 	<description>XML Converter with Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<version.springboot>2.7.18</version.springboot>
 		<version.lombok>1.18.30</version.lombok>
 		<version.jakarta.xml>2.3.3</version.jakarta.xml>
 		<version.mapstruct>1.5.5.Final</version.mapstruct>
 		<version.mapstruct-lombok-binding>0.2.0</version.mapstruct-lombok-binding>
 		<version.logback>1.4.14</version.logback>
 		<version.jacoco>0.8.11</version.jacoco>
+		<spring.cloud.version>3.2.12</spring.cloud.version>
+		<aws.serverless.java.container>1.9.3</aws.serverless.java.container>
 		<awspowertools.version>1.17.0</awspowertools.version>
-		<version.springboot>2.7.18</version.springboot>
+		<version.adapter.aws.functions>3.2.12</version.adapter.aws.functions>
+		<spring.cloud.aws.version>2.4.4</spring.cloud.aws.version>
+
 	</properties>
 	<dependencies>
 		<dependency>
@@ -36,10 +41,40 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-			<version>${version.springboot}</version>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter</artifactId>
+			<version>3.1.8</version>
 		</dependency>
+
+		<dependency>
+			<groupId>io.awspring.cloud</groupId>
+			<artifactId>spring-cloud-aws-dependencies</artifactId>
+			<version>${spring.cloud.aws.version}</version>
+			<type>pom</type>
+			<scope>import</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-function-context</artifactId>
+			<version>${spring.cloud.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-function-web</artifactId>
+			<version>${spring.cloud.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.amazonaws.serverless</groupId>
+			<artifactId>aws-serverless-java-container-springboot2</artifactId>
+			<version>${aws.serverless.java.container}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-function-adapter-aws</artifactId>
+			<version>${version.adapter.aws.functions}</version>
+		</dependency>
+
 		<dependency>
 			<groupId>jakarta.xml.bind</groupId>
 			<artifactId>jakarta.xml.bind-api</artifactId>
@@ -78,22 +113,6 @@
 			<artifactId>jacoco-maven-plugin</artifactId>
 			<version>${version.jacoco}</version>
 		</dependency>
-
-		<dependency>
-			<groupId>com.azure</groupId>
-			<artifactId>azure-messaging-eventhubs</artifactId>
-			<version>5.15.0</version>
-		</dependency>
-		<dependency>
-			<groupId>com.azure</groupId>
-			<artifactId>azure-messaging-eventhubs-checkpointstore-blob</artifactId>
-			<version>1.16.1</version>
-		</dependency>
-		<dependency>
-			<groupId>com.amazonaws.serverless</groupId>
-			<artifactId>aws-serverless-java-container-springboot2</artifactId>
-			<version>1.9.3</version>
-		</dependency>
 		<dependency>
 			<groupId>software.amazon.lambda</groupId>
 			<artifactId>powertools-tracing</artifactId>
@@ -108,6 +127,12 @@
 			<groupId>software.amazon.lambda</groupId>
 			<artifactId>powertools-metrics</artifactId>
 			<version>${awspowertools.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.awspring.cloud</groupId>
+			<artifactId>spring-cloud-aws-messaging</artifactId>
+			<version>${spring.cloud.aws.version}</version>
 		</dependency>
 
 	</dependencies>
@@ -215,6 +240,7 @@
 							<artifactSet>
 								<excludes>
 									<exclude>org.apache.tomcat.embed:*</exclude>
+									<exclude>io.netty:*</exclude>
 									<exclude>junit:junit</exclude>
 									<exclude>org.junit:*</exclude>
 									<exclude>org.mapstruct:*</exclude>

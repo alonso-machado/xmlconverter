@@ -14,13 +14,12 @@ C:\Users\Alonso\Documents\Projects\xmlconverter\src\main\java\com\alonso\xmlconv
 C:\Users\Alonso\Documents\Projects\xmlconverter\src\main\java\com\alonso\xmlconverter\adapters\BigDecimalAdapter.java
 C:\Users\Alonso\Documents\Projects\xmlconverter\src\main\java\com\alonso\xmlconverter\model\output\HasScheduleEnum.java
 C:\Users\Alonso\Documents\Projects\xmlconverter\src\main\java\com\alonso\xmlconverter\aws\LambdaHandler.java
+C:\Users\Alonso\Documents\Projects\xmlconverter\src\main\java\com\alonso\xmlconverter\exceptions\XMLFaultyDataException.java
 C:\Users\Alonso\Documents\Projects\xmlconverter\src\main\java\com\alonso\xmlconverter\model\output\OperationTypeEnum.java
 C:\Users\Alonso\Documents\Projects\xmlconverter\src\main\java\com\alonso\xmlconverter\mapper\OperationMapper.java
 C:\Users\Alonso\Documents\Projects\xmlconverter\src\main\java\com\alonso\xmlconverter\model\output\FinanceMoviment.java
-C:\Users\Alonso\Documents\Projects\xmlconverter\src\main\java\com\alonso\xmlconverter\azure\EventProcessorBlobCheckpointStore.java
 C:\Users\Alonso\Documents\Projects\xmlconverter\src\main\java\com\alonso\xmlconverter\model\GenderEnum.java
 C:\Users\Alonso\Documents\Projects\xmlconverter\src\main\java\com\alonso\xmlconverter\model\input\PagamentoEnum.java
-C:\Users\Alonso\Documents\Projects\xmlconverter\src\main\java\com\alonso\xmlconverter\azure\Sender.java
 C:\Users\Alonso\Documents\Projects\xmlconverter\src\main\java\com\alonso\xmlconverter\adapters\LocalDateXmlAdapter.java
 C:\Users\Alonso\Documents\Projects\xmlconverter\src\main\java\com\alonso\xmlconverter\ConverterProcessor.java
 C:\Users\Alonso\Documents\Projects\xmlconverter\src\main\java\com\alonso\xmlconverter\model\output\Moviment.java

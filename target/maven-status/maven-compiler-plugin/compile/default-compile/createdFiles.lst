@@ -8,9 +8,9 @@ com\alonso\xmlconverter\model\output\HasScheduleEnum.class
 com\alonso\xmlconverter\adapters\LocalDateGsonAdapter.class
 com\alonso\xmlconverter\mapper\OperationMapperImpl.class
 com\alonso\xmlconverter\model\input\Cliente$ClienteBuilder.class
+com\alonso\xmlconverter\exceptions\XMLFaultyDataException.class
 com\alonso\xmlconverter\mapper\CustomerMapperImpl.class
 com\alonso\xmlconverter\model\input\Operacao.class
-com\alonso\xmlconverter\azure\Sender.class
 com\alonso\xmlconverter\model\GenderEnum.class
 com\alonso\xmlconverter\aws\LambdaHandler.class
 com\alonso\xmlconverter\mapper\FinanceMovimentMapperImpl.class
@@ -29,7 +29,6 @@ com\alonso\xmlconverter\model\input\PossuiParcelamentosEnum.class
 com\alonso\xmlconverter\model\output\OperationTypeEnum.class
 com\alonso\xmlconverter\model\input\MovimentacaoFinanceira.class
 com\alonso\xmlconverter\ConverterProcessor.class
-com\alonso\xmlconverter\azure\EventProcessorBlobCheckpointStore.class
 com\alonso\xmlconverter\model\input\Cliente.class
 com\alonso\xmlconverter\model\output\Moviment.class
 com\alonso\xmlconverter\mapper\OperationMapper.class

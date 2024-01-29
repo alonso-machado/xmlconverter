@@ -9,8 +9,6 @@
             <VALOR_ORIGINAL>1520,00</VALOR_ORIGINAL>
             <DT_VENCIMENTO>01/05/2023</DT_VENCIMENTO>
             <TOTAL_PARCELAS>10</TOTAL_PARCELAS>
-            <POSSUI_PARCELAMENTO>S</POSSUI_PARCELAMENTO>
-            <PARCELA_PAGA>5</PARCELA_PAGA>
             <CLIENTE>
                 <ID></ID>
                 <NOME>Jose da Silva</NOME>

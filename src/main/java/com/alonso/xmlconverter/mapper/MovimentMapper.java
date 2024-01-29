@@ -19,7 +19,8 @@ public abstract class MovimentMapper {
 		moviment.setOperation(mapOperationFromOperacao(movimento.getOperacao()));
 	}
 
-	@BeanMapping(builder = @Builder(disableBuilder = true))
+	@BeanMapping(builder = @Builder(disableBuilder = true),
+			subclassExhaustiveStrategy = SubclassExhaustiveStrategy.RUNTIME_EXCEPTION)
 	public abstract Moviment toMoviment(Movimento xmlEntity);
 
 }

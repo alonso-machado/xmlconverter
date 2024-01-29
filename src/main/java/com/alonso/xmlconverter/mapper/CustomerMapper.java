@@ -22,22 +22,4 @@ public abstract class CustomerMapper {
 	@Mapping(target = "gender", source = "entityXml.sexo")
 	@BeanMapping(builder = @Builder(disableBuilder = true))
 	public abstract Customer toCustomer(Cliente entityXml);
-
-	/*
-	@BeforeMapping
-	protected void enrichJson(Customer customerJson, @MappingTarget Cliente cliente) {
-		if (customerJson.getPreferentialPayment().equals(PaymentTypeEnum.T)) {
-			cliente.setPagamentoPreferencial(PagamentoEnum.B);
-		} else {
-			cliente.setPagamentoPreferencial(PagamentoEnum.valueOf(customerJson.getPreferentialPayment().toString()));
-		}
-	}
-
-	@Mapping(target = "nome", source = "customerJson.name")
-	@Mapping(target="dataCadastro", source="customerJson.creationDate", dateFormat="dd/MM/yyyy")
-	@Mapping(target = "dataNascimento", source="customerJson.birthdayDate", dateFormat="dd/MM/yyyy")
-	@Mapping(target = "sexo", source = "customerJson.gender")
-	@BeanMapping(builder = @Builder(disableBuilder = true))
-	public abstract Cliente toCliente(Customer customerJson);
-	*/
 }

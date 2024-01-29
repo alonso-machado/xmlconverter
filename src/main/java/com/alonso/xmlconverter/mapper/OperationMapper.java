@@ -43,47 +43,10 @@ public abstract class OperationMapper {
 	@Mapping(target = "amountFee", source = "operacao.valorJuros")
 	@Mapping(target = "totalSchedules", source = "operacao.totalParcelas")
 	@Mapping(target = "paidScheduleNumber", source = "operacao.parcelaPaga")
-	@BeanMapping(builder = @Builder(disableBuilder = true),	nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS)
+	@BeanMapping(builder = @Builder(disableBuilder = true),
+			subclassExhaustiveStrategy = SubclassExhaustiveStrategy.RUNTIME_EXCEPTION)
 	public abstract Operation toOperation(Operacao operacao);
 
+	//NullValueCheckStrategy.ALWAYS to Gracefully Accept the XML without some components and map to NULL
 	//NullValuePropertyMappingStrategy.IGNORE to ignore null values
-
-	/*
-
-	public Cliente mapClienteFromCustomer(Customer cus) {
-		return Mappers.getMapper(CustomerMapper.class).toCliente(cus);
-	}
-
-	@BeforeMapping
-	protected void enrichEntity(Operation operationJson, @MappingTarget Operacao operacao) {
-		if (operationJson.getOperationType().equals(OperationTypeEnum.S)) {
-			operacao.setTipoOperacao(TipoOperacaoEnum.L);
-		} else {
-			operacao.setTipoOperacao(TipoOperacaoEnum.valueOf(operationJson.getOperationType().toString()));
-		}
-		if (operationJson.getPaymentType().equals(PaymentTypeEnum.T)) {
-			operacao.setFormaPagamento(PagamentoEnum.B);
-		} else {
-			operationJson.setPaymentType(PaymentTypeEnum.valueOf(operacao.getFormaPagamento().toString()));
-		}
-		if (operationJson.getHasSchedules().equals(HasScheduleEnum.Y)) {
-			operacao.setPossuiParcelamento(PossuiParcelamentosEnum.S);
-		} else {
-			operacao.setPossuiParcelamento(PossuiParcelamentosEnum.N);
-		}
-		if( operationJson.getCustomer() != null){
-			operacao.setCliente( mapClienteFromCustomer(operationJson.getCustomer()) );
-		}
-
-	}
-
-	@Mapping(target = "valorPago", source = "operationJson.amountPaid")
-	@Mapping(target = "valorOriginal", source = "operationJson.originalAmount")
-	@Mapping(target = "dtVencimento", source = "operationJson.dueDate", dateFormat = "dd/MM/yyyy")
-	@Mapping(target = "valorJuros", source = "operationJson.amountFee")
-	@Mapping(target = "totalParcelas", source = "operationJson.totalSchedules")
-	@Mapping(target = "parcelaPaga", source = "operationJson.paidScheduleNumber")
-	@BeanMapping(builder = @Builder(disableBuilder = true))
-	public abstract Operacao toOperacaoEntity(Operation operationJson);
-	*/
 }

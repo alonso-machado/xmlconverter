@@ -37,9 +37,6 @@ public class LambdaHandler implements RequestHandler<AwsProxyRequest, AwsProxyRe
 		}
 	}
 
-	// Spring Cloud Function was an option to abstract this logic and make it agnostic
-	// But I chose to implement AWS and AZURE independently
-
 	@Logging
 	@Tracing
 	@Metrics

@@ -1,6 +1,6 @@
 # XML to JSON Processor Function
 ##  Java 11 and Spring 2.7
-#### This project is  done in AWS Lambda or Azure Function
+#### This project is  done in AWS Lambda
 
 ### Read XML input and do the Following Transformations:
 

@@ -62,10 +62,6 @@ y
 Isrc/test/java/com/alonso/xmlconverter/unit/mapper/MovimentMapperTest.java,c\d\cd582a50426add860d552f5793a424d54d4d4e31
 u
 Esrc/main/java/com/alonso/xmlconverter/adapters/BigDecimalAdapter.java,5\b\5bb039e2a9cf841af930dba7c713cbc1b165f5f8
-g
-7src/main/java/com/alonso/xmlconverter/azure/Sender.java,d\d\dd071dff77e0c2bd242daae22437bef756b8782c
-‚
-Rsrc/main/java/com/alonso/xmlconverter/azure/EventProcessorBlobCheckpointStore.java,5\5\558f0b6799563b65e1ae2055f5eb93b0135279a8
 =
 lombok.config,8\2\823fe80d2650ec87c2614800da17ca3a55af96a9
 9
@@ -95,3 +91,5 @@ Ssrc/test/java/com/alonso/xmlconverter/integration/LambdaHandlerIntegrationTest.
 Msrc/test/java/com/alonso/xmlconverter/integration/ConverterProcessorTest.java,5\5\55c9d5d2a15a12a8318874cc1fa629e9dc6d597a
 w
 Gsrc/test/java/com/alonso/xmlconverter/XmlconverterApplicationTests.java,7\7\77052fe8e844e4e7bad839f23b6d13c2fa174c84
+|
+Lsrc/main/java/com/alonso/xmlconverter/exceptions/XMLFaultyDataException.java,c\4\c4064b0bf75c1c2717df78744b6cce2a9a46d34e

@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2024-01-04T17:37:01-0400",
+    date = "2024-01-29T14:44:23-0400",
     comments = "version: 1.5.5.Final, compiler: javac, environment: Java 17.0.5 (Eclipse Adoptium)"
 )
 @Component
@@ -33,27 +33,13 @@ public class OperationMapperImpl extends OperationMapper {
         Integer paidScheduleNumber = null;
         Integer id = null;
 
-        if ( operacao.getValorPago() != null ) {
-            amountPaid = operacao.getValorPago();
-        }
-        if ( operacao.getValorOriginal() != null ) {
-            originalAmount = operacao.getValorOriginal();
-        }
-        if ( operacao.getDtVencimento() != null ) {
-            dueDate = operacao.getDtVencimento();
-        }
-        if ( operacao.getValorJuros() != null ) {
-            amountFee = operacao.getValorJuros();
-        }
-        if ( operacao.getTotalParcelas() != null ) {
-            totalSchedules = operacao.getTotalParcelas();
-        }
-        if ( operacao.getParcelaPaga() != null ) {
-            paidScheduleNumber = operacao.getParcelaPaga();
-        }
-        if ( operacao.getId() != null ) {
-            id = operacao.getId();
-        }
+        amountPaid = operacao.getValorPago();
+        originalAmount = operacao.getValorOriginal();
+        dueDate = operacao.getDtVencimento();
+        amountFee = operacao.getValorJuros();
+        totalSchedules = operacao.getTotalParcelas();
+        paidScheduleNumber = operacao.getParcelaPaga();
+        id = operacao.getId();
 
         OperationTypeEnum operationType = null;
         PaymentTypeEnum paymentType = null;
